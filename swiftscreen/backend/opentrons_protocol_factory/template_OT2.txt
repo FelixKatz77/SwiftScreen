@@ -1,0 +1,41 @@
+from opentrons import protocol_api
+from collections import defaultdict
+import re
+
+def get_first_wells_of_complete_columns(wells):
+
+    expected_rows = set("ABCDEFGH")
+    column_to_rows = defaultdict(set)
+
+    for well in wells:
+        match = re.match(r"^([A-H])(\d{1,2})$", well)
+        if match:
+            row, col = match.groups()
+            column_to_rows[int(col)].add(row)
+
+    # Find columns that contain all rows A–H
+    complete_columns = sorted(col for col, rows in column_to_rows.items() if rows == expected_rows)
+
+    # Return the first well (row A) of each complete column
+    return [f"A{col}" for col in complete_columns]
+
+def get_corresponding_wells_for_complete_rows(wells):
+
+    expected_columns = set(range(1, 13))  # Assuming columns are numbered 1 to 12
+    row_to_columns = defaultdict(set)
+
+    for well in wells:
+        match = re.match(r"^([A-H])(\d{1,2})$", well)
+        if match:
+            row, col = match.groups()
+            row_to_columns[row].add(int(col))
+
+    # Find rows that contain all columns 1–12
+    complete_rows = sorted(row for row, cols in row_to_columns.items() if cols == expected_columns)
+
+    if complete_rows:
+        return ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'A11', 'A12']
+    else:
+        return []
+
+requirements = {"robotType": "OT-2"}

@@ -1,0 +1,39 @@
+import opentrons
+from opentrons import protocol_api
+from opentrons.protocol_api import SINGLE, ALL
+
+def get_first_wells_of_complete_columns(wells):
+    from collections import defaultdict
+    import re
+
+    expected_rows = set("ABCDEFGH")
+    column_to_rows = defaultdict(set)
+
+    for well in wells:
+        match = re.match(r"^([A-H])(\d{1,2})$", well)
+        if match:
+            row, col = match.groups()
+            column_to_rows[int(col)].add(row)
+
+    # Find columns that contain all rows A–H
+    complete_columns = sorted(col for col, rows in column_to_rows.items() if rows == expected_rows)
+
+    # Return the first well (row A) of each complete column
+    return [f"A{col}" for col in complete_columns]
+
+def find_aspirate_height(pip : protocol_api.InstrumentContext, source_well: protocol_api.Well) -> float:
+    if not pip.has_tip:
+        pip.pick_up_tip()
+    pip.prepare_to_aspirate()
+    liquid_height = pip.measure_liquid_height(source_well)
+
+    if isinstance(liquid_height, float):
+        height = liquid_height - source_well.bottom().point.z
+        aspirate_height = max(height - 2.0, 1) # from 1.5
+        print("Liquid Height Detected! Returning adapted value.")
+        return aspirate_height
+    else:
+        print("Returned Liquid Height is not of type float - returning the bottom coordinate + 1")
+        return source_well.bottom().point.z + 1
+
+requirements = {"robotType": "Flex"}

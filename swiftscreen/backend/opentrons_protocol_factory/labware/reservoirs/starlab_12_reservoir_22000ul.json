@@ -1,0 +1,216 @@
+{
+    "ordering": [
+        [
+            "A1"
+        ],
+        [
+            "A2"
+        ],
+        [
+            "A3"
+        ],
+        [
+            "A4"
+        ],
+        [
+            "A5"
+        ],
+        [
+            "A6"
+        ],
+        [
+            "A7"
+        ],
+        [
+            "A8"
+        ],
+        [
+            "A9"
+        ],
+        [
+            "A10"
+        ],
+        [
+            "A11"
+        ],
+        [
+            "A12"
+        ]
+    ],
+    "brand": {
+        "brand": "Starlab",
+        "brandId": []
+    },
+    "metadata": {
+        "displayName": "Starlab 12 Reservoir 22000 µL",
+        "displayCategory": "reservoir",
+        "displayVolumeUnits": "µL",
+        "tags": []
+    },
+    "dimensions": {
+        "xDimension": 127,
+        "yDimension": 85,
+        "zDimension": 44
+    },
+    "wells": {
+        "A1": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 14.5,
+            "y": 43,
+            "z": 5.6
+        },
+        "A2": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 23.48,
+            "y": 43,
+            "z": 5.6
+        },
+        "A3": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 32.46,
+            "y": 43,
+            "z": 5.6
+        },
+        "A4": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 41.44,
+            "y": 43,
+            "z": 5.6
+        },
+        "A5": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 50.42,
+            "y": 43,
+            "z": 5.6
+        },
+        "A6": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 59.4,
+            "y": 43,
+            "z": 5.6
+        },
+        "A7": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 68.38,
+            "y": 43,
+            "z": 5.6
+        },
+        "A8": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 77.36,
+            "y": 43,
+            "z": 5.6
+        },
+        "A9": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 86.34,
+            "y": 43,
+            "z": 5.6
+        },
+        "A10": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 95.32,
+            "y": 43,
+            "z": 5.6
+        },
+        "A11": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 104.3,
+            "y": 43,
+            "z": 5.6
+        },
+        "A12": {
+            "depth": 38.4,
+            "totalLiquidVolume": 22000,
+            "shape": "rectangular",
+            "xDimension": 9,
+            "yDimension": 72,
+            "x": 113.28,
+            "y": 43,
+            "z": 5.6
+        }
+    },
+    "groups": [
+        {
+            "metadata": {
+                "wellBottomShape": "v"
+            },
+            "wells": [
+                "A1",
+                "A2",
+                "A3",
+                "A4",
+                "A5",
+                "A6",
+                "A7",
+                "A8",
+                "A9",
+                "A10",
+                "A11",
+                "A12"
+            ]
+        }
+    ],
+    "parameters": {
+        "format": "irregular",
+        "quirks": [
+            "centerMultichannelOnWells",
+            "touchTipDisabled"
+        ],
+        "isTiprack": false,
+        "isMagneticModuleCompatible": false,
+        "loadName": "starlab_12_reservoir_22000ul"
+    },
+    "namespace": "custom_beta",
+    "version": 1,
+    "schemaVersion": 2,
+    "cornerOffsetFromSlot": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+    }
+}
